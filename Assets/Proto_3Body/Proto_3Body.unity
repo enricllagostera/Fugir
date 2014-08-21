@@ -156,6 +156,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2eeb1ad624bd85a44b55701f9d26caaf, type: 2}
+      propertyPath: tagAlvo
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2eeb1ad624bd85a44b55701f9d26caaf, type: 2}
   m_RootGameObject: {fileID: 2031060934}
@@ -542,7 +546,7 @@ GameObject:
   - 114: {fileID: 1486913069}
   m_Layer: 0
   m_Name: Jogador
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -806,6 +810,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4ea063116589e384bad4e78dc9fc2358, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ea063116589e384bad4e78dc9fc2358, type: 2}
   m_RootGameObject: {fileID: 1486913062}
@@ -845,6 +853,7 @@ MonoBehaviour:
   destruirNoFim: 1
   raio: 3
   forca: 500
+  tagAlvo: Player
 --- !u!212 &2031060936
 SpriteRenderer:
   m_ObjectHideFlags: 0

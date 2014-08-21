@@ -45,6 +45,7 @@ MonoBehaviour:
   destruirNoFim: 1
   raio: 3
   forca: 500
+  tagAlvo: Inimigo
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

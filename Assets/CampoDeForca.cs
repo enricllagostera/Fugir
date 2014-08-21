@@ -2,20 +2,24 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// Item capaz de aproximar ou repelir objetos agrupados por uma tag qualquer.
+/// </summary>
 public class CampoDeForca : Item
 {
 	[Range (0, 10)]
 	public float raio;
 	[Range (-1000, 1000)]
 	public float forca;
+	public string tagAlvo;
 
-	private List<Inimigo> inimigos;
+	private List<Transform> inimigos;
 
 	override public void Ligar () {
 		print (gameObject.name + " ligado");
-		inimigos = new List<Inimigo>();
-		foreach (var inimigo in GameObject.FindGameObjectsWithTag ("Inimigo")) {
-			inimigos.Add (inimigo.GetComponent<Inimigo> ());
+		inimigos = new List<Transform>();
+		foreach (var inimigo in GameObject.FindGameObjectsWithTag (tagAlvo)) {
+			inimigos.Add (inimigo.transform);
 		}
 	}
 
