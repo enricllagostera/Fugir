@@ -18,7 +18,7 @@ public class CampoDeForca : Item
 	override public void Ligar () {
 		print (gameObject.name + " ligado");
 		inimigos = new List<Transform>();
-		foreach (var inimigo in GameObject.FindGameObjectsWithTag (tagAlvo)) {
+		foreach (GameObject inimigo in GameObject.FindGameObjectsWithTag (tagAlvo)) {
 			inimigos.Add (inimigo.transform);
 		}
 	}

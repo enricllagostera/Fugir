@@ -160,6 +160,10 @@ Prefab:
       propertyPath: tagAlvo
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2eeb1ad624bd85a44b55701f9d26caaf, type: 2}
+      propertyPath: forca
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2eeb1ad624bd85a44b55701f9d26caaf, type: 2}
   m_RootGameObject: {fileID: 2031060934}
@@ -852,7 +856,7 @@ MonoBehaviour:
   tempoAtivo: 0
   destruirNoFim: 1
   raio: 3
-  forca: 500
+  forca: 1000
   tagAlvo: Player
 --- !u!212 &2031060936
 SpriteRenderer:
