@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 /// <summary>
 /// Controla um encaixe capaz de soltar itens e depois se regenerar em um intervalo de tempo
@@ -37,22 +38,25 @@ public class Encaixe {
 
 #region Inventario
 /// <summary>
-/// Conjunto de encaixes ativados por botoes definidos no InputManager
+/// Lista dinamica de encaixes ativados por botoes definidos no InputManager.
 /// </summary>
 public class Inventario : MonoBehaviour {
 
-	public Encaixe itemA;
+	public List<Encaixe> encaixes;
 
 	void Start () {
-		itemA.Reiniciar ();
+		encaixes.ForEach (encaixe => {
+			encaixe.Reiniciar ();
+		});
 	}
-
-	// Update is called once per frame
+	
 	void Update () {
-		if (Input.GetButtonDown (itemA.botao)) {
-			itemA.Ativar (transform.position);
-		}
-		itemA.Atualizar ();
+		encaixes.ForEach (encaixe => {
+			if (Input.GetButtonDown (encaixe.botao)) {
+				encaixe.Ativar (transform.position);
+			}
+			encaixe.Atualizar ();
+		});
 	}
 }
 

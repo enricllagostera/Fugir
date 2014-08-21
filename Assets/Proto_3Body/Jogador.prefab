@@ -69,7 +69,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 100000}
   m_Mass: 50
   m_LinearDrag: 1
-  m_AngularDrag: 0
+  m_AngularDrag: 20
   m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0
@@ -123,12 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a18ef75cbd80544691c6df67851289e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemA:
-    botao: BotaoA
-    disponivel: 1
+  encaixes:
+  - botao: BotaoA
+    disponivel: 0
     intervalo: 10
     contadorIntervalo: 0
-    item: {fileID: 0}
+    item: {fileID: 11400000, guid: 2eeb1ad624bd85a44b55701f9d26caaf, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

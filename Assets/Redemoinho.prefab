@@ -43,8 +43,8 @@ MonoBehaviour:
   tempoDeVida: 10
   tempoAtivo: 0
   destruirNoFim: 1
-  raio: 4
-  forca: 400
+  raio: 3
+  forca: 500
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
