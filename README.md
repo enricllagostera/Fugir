@@ -1,7 +1,5 @@
-Fugir
-=====
+Jogo de fugir de adversários, por Enric Llagostera.
 
-Jogo de fugir de adversários.
+### [Design log](https://github.com/enricllagostera/Fugir/wiki/Design-log)
 
-[[Design log]]
-[[Home]]
+### [Wiki](https://github.com/enricllagostera/Fugir/wiki)
