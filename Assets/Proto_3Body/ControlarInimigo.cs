@@ -14,7 +14,17 @@ public class ControlarInimigo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		_direcao = alvo.position - transform.position;
+		if (alvo != null) {
+			_direcao = alvo.position - transform.position;
+
+		}
+		else {
+			_direcao = Vector3.zero;
+			// FIXME reiniciar quando perder
+			if (Input.GetKeyDown(KeyCode.Escape)) {
+				Application.LoadLevel(Application.loadedLevel);
+			}
+		}
 		_motor.direcao = _direcao;
 	}
 }

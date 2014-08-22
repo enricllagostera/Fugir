@@ -31,7 +31,7 @@ public class Encaixe {
 			Reiniciar ();
 		}
 		else {
-			Debug.Log (item.name + " nao esta disponivel");
+			//Debug.Log (item.name + " nao esta disponivel");
 		}
 	}
 }

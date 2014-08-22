@@ -16,14 +16,14 @@ public class CampoDeForca : Item
 	private List<Transform> inimigos;
 
 	override public void Ligar () {
-		print (gameObject.name + " ligado");
+		//print (gameObject.name + " ligado");
+	}
+
+	override public void Executar () {
 		inimigos = new List<Transform>();
 		foreach (GameObject inimigo in GameObject.FindGameObjectsWithTag (tagAlvo)) {
 			inimigos.Add (inimigo.transform);
 		}
-	}
-
-	override public void Executar () {
 		inimigos.ForEach (inimigo => {
 			float distancia = Vector2.Distance (transform.position, inimigo.transform.position);
 			float fatorDistancia = 1 - Mathf.Clamp (distancia, 0, raio) / raio;
@@ -34,7 +34,7 @@ public class CampoDeForca : Item
 	}
 
 	override public void Desligar () {
-		print (gameObject.name + " desligado");
+		// print (gameObject.name + " desligado");
 	}
 }
 
