@@ -25,8 +25,8 @@ public class CampoDeForca : Item
 			inimigos.Add (inimigo.transform);
 		}
 		inimigos.ForEach (inimigo => {
-			float distancia = Vector2.Distance (transform.position, inimigo.transform.position);
-			float fatorDistancia = 1 - Mathf.Clamp (distancia, 0, raio) / raio;
+			//float distancia = Vector2.Distance (transform.position, inimigo.transform.position);
+			//float fatorDistancia = 1 - Mathf.Clamp (distancia, 0, raio) / raio;
 			Vector2 direcao = transform.position - inimigo.transform.position;
 			inimigo.rigidbody2D.AddForce (direcao.normalized * forca, ForceMode2D.Force);
 			// Debug.DrawRay (inimigo.transform.position, direcao.normalized * Mathf.Sign(forca), Color.magenta);

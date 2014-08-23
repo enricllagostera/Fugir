@@ -8,6 +8,7 @@ public class ChecarVitoria : MonoBehaviour {
 	public float contagem;
 	public float restante;
 	public bool vitoria;
+	public GUIText msgTempo;
 
 	void Start () {
 		restante = intervalo;
@@ -22,6 +23,9 @@ public class ChecarVitoria : MonoBehaviour {
 			print ("abriu");
 			vitoria = true;
 			MessageKit.post (Eventos.VitoriaFase);
+		}
+		else {
+			msgTempo.text = Mathf.Clamp(restante, 0, 10000).ToString("00.0");
 		}
 	}
 }
