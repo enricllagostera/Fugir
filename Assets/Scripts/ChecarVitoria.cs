@@ -25,7 +25,7 @@ public class ChecarVitoria : MonoBehaviour {
 			MessageKit.post (Eventos.VitoriaFase);
 		}
 		else {
-			msgTempo.text = Mathf.Clamp(restante, 0, 10000).ToString("00.0");
+			msgTempo.text = Mathf.Clamp(restante, 0, 10000).ToString("00.0") + "\nLinhas: " + Linha.contagemCruzamento;
 		}
 	}
 }

@@ -4,9 +4,14 @@ using Prime31.MessageKit;
 
 public class Linha : MonoBehaviour
 {
+	public static int contagemCruzamento = 0;
 	public Transform inicio;
 	public Transform fim;
 	public bool cruzando;
+
+	void Start () {
+		contagemCruzamento = 0;
+	}
 
 	void Update () {
 		transform.position = Vector3.Lerp (inicio.position, fim.position, 0.5f);
@@ -23,6 +28,7 @@ public class Linha : MonoBehaviour
 	void OnTriggerExit2D (Collider2D outro) {
 		if (outro.CompareTag("Player")) {
 			cruzando = false;
+			contagemCruzamento++;
 			MessageKit.post (Eventos.Cruzou);
 		}
 	}

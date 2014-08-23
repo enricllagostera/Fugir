@@ -19,7 +19,7 @@ public class ControlarPorAStar : MonoBehaviour {
 	}
 
 	IEnumerator AtualizarAlvo () {
-		while (enabled) {
+		while (enabled && alvo != null) {
 			_seeker.StartPath (transform.position, alvo.position, CalculouCaminho);
 			yield return new WaitForSeconds (intervalo);
 		}
@@ -34,6 +34,13 @@ public class ControlarPorAStar : MonoBehaviour {
 	}
 
 	void Update () {
+		if (alvo == null) {
+			// FIXME reiniciar quando perder
+			if (Input.GetKeyDown(KeyCode.Space)) {
+				Application.LoadLevel(Application.loadedLevel);
+			}
+		}
+
 		if (_path == null) {
 			//We have no path to move after yet
 			print ("espera");
@@ -55,5 +62,7 @@ public class ControlarPorAStar : MonoBehaviour {
 			pontoAtual++;
 			return;
 		}
+
+
 	}
 }

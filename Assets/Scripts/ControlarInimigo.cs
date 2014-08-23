@@ -21,7 +21,7 @@ public class ControlarInimigo : MonoBehaviour {
 		else {
 			_direcao = Vector3.zero;
 			// FIXME reiniciar quando perder
-			if (Input.GetKeyDown(KeyCode.Escape)) {
+			if (Input.GetKeyDown(KeyCode.Space)) {
 				Application.LoadLevel(Application.loadedLevel);
 			}
 		}
