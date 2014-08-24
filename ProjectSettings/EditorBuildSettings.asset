@@ -5,5 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Prototipos/Proto_3Body/Proto_3Body.unity
   - enabled: 1
-    path: Assets/Proto_3Body/Proto_3Body.unity
+    path: Assets/Fase_0.unity
