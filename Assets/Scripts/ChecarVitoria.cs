@@ -4,6 +4,7 @@ using Prime31.MessageKit;
 
 public class ChecarVitoria : MonoBehaviour {
 
+	public int energiaPortao;
 	public float intervalo;
 	public float contagem;
 	public float restante;
@@ -18,7 +19,8 @@ public class ChecarVitoria : MonoBehaviour {
 
 	void Update () {
 		contagem += Time.deltaTime;
-		restante = intervalo - contagem;
+		//restante = intervalo - contagem;
+		restante = Mathf.Max(0, energiaPortao - Linha.contagemCruzamento);
 		if (restante <= 0 && !vitoria) {
 			print ("abriu");
 			vitoria = true;
