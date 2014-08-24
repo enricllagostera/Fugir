@@ -8,6 +8,7 @@ public class Linha : MonoBehaviour
 	public Transform inicio;
 	public Transform fim;
 	public bool cruzando;
+	private Color cor;
 
 	void Start () {
 		contagemCruzamento = 0;
@@ -22,6 +23,8 @@ public class Linha : MonoBehaviour
 	void OnTriggerEnter2D (Collider2D outro) {
 		if (outro.CompareTag("Player")) {
 			cruzando = true;
+			cor = outro.GetComponent<SpriteRenderer>().color;
+			outro.GetComponent<SpriteRenderer>().color = GetComponentInChildren<SpriteRenderer>().color;
 		}
 	}
 
@@ -30,6 +33,7 @@ public class Linha : MonoBehaviour
 			cruzando = false;
 			contagemCruzamento++;
 			MessageKit.post (Eventos.Cruzou);
+			outro.GetComponent<SpriteRenderer>().color = cor;
 		}
 	}
 }
