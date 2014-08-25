@@ -16,7 +16,8 @@ public class Portao : MonoBehaviour
 	// Update is called once per frame
 	void Abrir ()
 	{
-		GetComponent<SpriteRenderer>().color = Color.green;
+		//GetComponent<SpriteRenderer>().color = Color.green;
+		GetComponent<Animator>().SetTrigger("AbrirPortao");
 		aberto = true;
 	}
 
