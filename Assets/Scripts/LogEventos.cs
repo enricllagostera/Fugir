@@ -8,7 +8,7 @@ public class LogEventos : MonoBehaviour {
 	void Start () {
 		_msg = GetComponent<GUIText>();
 		MessageKit.addObserver (Eventos.DerrotaFase, Perdeu);
-		MessageKit.addObserver (Eventos.Cruzou, Cruzou);
+		MessageKit.addObserver (Eventos.CruzouLinha, Cruzou);
 		MessageKit.addObserver (Eventos.VitoriaFase, Ganhou);
 	}
 

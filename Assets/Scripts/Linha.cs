@@ -5,6 +5,7 @@ using Prime31.MessageKit;
 public class Linha : MonoBehaviour
 {
 	public static int contagemCruzamento = 0;
+	public static int totalCruzamento = 0;
 	public Transform inicio;
 	public Transform fim;
 	public bool cruzando;
@@ -23,17 +24,15 @@ public class Linha : MonoBehaviour
 	void OnTriggerEnter2D (Collider2D outro) {
 		if (outro.CompareTag("Player")) {
 			cruzando = true;
-			// cor = outro.GetComponent<SpriteRenderer>().color;
-			// outro.GetComponent<SpriteRenderer>().color = GetComponentInChildren<SpriteRenderer>().color;
 		}
 	}
 
 	void OnTriggerExit2D (Collider2D outro) {
-		if (outro.CompareTag("Player")) {
+		if (outro.CompareTag("Player") && cruzando) {
+			print ("cruzou");
 			cruzando = false;
 			contagemCruzamento++;
-			MessageKit.post (Eventos.Cruzou);
-			// outro.GetComponent<SpriteRenderer>().color = cor;
+			MessageKit.post (Eventos.CruzouLinha);
 		}
 	}
 }

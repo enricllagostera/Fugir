@@ -11,10 +11,12 @@ public class ChecarVitoria : MonoBehaviour {
 	public bool vitoria;
 	public GUIText msgTempo;
 
-	void Start () {
+	void Awake () {
 		restante = intervalo;
 		contagem = 0;
 		vitoria = false;
+		Linha.contagemCruzamento = 0;
+		Linha.totalCruzamento = energiaPortao;
 	}
 
 	void Update () {
@@ -27,7 +29,9 @@ public class ChecarVitoria : MonoBehaviour {
 			MessageKit.post (Eventos.VitoriaFase);
 		}
 		else {
-			msgTempo.text = Mathf.Clamp(restante, 0, 10000).ToString("00.0") + "\nLinhas: " + Linha.contagemCruzamento;
+			msgTempo.text = "Linhas faltando: " + 
+				Mathf.Clamp(restante, 0, 10000).ToString("00.0") + 
+				"\nLinhas: " + Linha.contagemCruzamento;
 		}
 	}
 }

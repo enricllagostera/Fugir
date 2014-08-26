@@ -5,6 +5,7 @@ using Prime31.MessageKit;
 public class Portao : MonoBehaviour
 {
 	public bool aberto;
+	public string proximaFase;
 
 	// Use this for initialization
 	void Awake ()
@@ -18,12 +19,13 @@ public class Portao : MonoBehaviour
 	{
 		//GetComponent<SpriteRenderer>().color = Color.green;
 		GetComponent<Animator>().SetTrigger("AbrirPortao");
+		MessageKit.post (Eventos.AbriuPortao);
 		aberto = true;
 	}
 
 	void OnTriggerEnter2D (Collider2D outro) {
 		if (outro.CompareTag ("Player") && aberto) {
-			Application.LoadLevel (Application.loadedLevel);
+			Application.LoadLevel (proximaFase);
 		}
 	}
 

@@ -34,35 +34,39 @@ public class ControlarPorAStar : MonoBehaviour {
 	}
 
 	void Update () {
-		if (alvo == null) {
-			// FIXME reiniciar quando perder
-			if (Input.GetKeyDown(KeyCode.Space)) {
-				Application.LoadLevel(Application.loadedLevel);
+		if(ControlarJogador.comecou) {
+
+			transform.right = rigidbody2D.velocity;
+
+			if (alvo == null) {
+				// FIXME reiniciar quando perder
+				if (Input.GetKeyDown(KeyCode.Space)) {
+					Application.LoadLevel(Application.loadedLevel);
+				}
+			}
+
+			if (_path == null) {
+				//We have no path to move after yet
+				print ("espera");
+				return;
+			}
+			
+			if (pontoAtual >= _path.vectorPath.Count) {
+				Debug.Log ("Fim do caminho");
+				return;
+			}
+			
+			//Direction to the next waypoint
+			Vector3 dir = (_path.vectorPath[pontoAtual]-transform.position).normalized;
+			_motor.direcao = dir;
+			
+			//Check if we are close enough to the next waypoint
+			//If we are, proceed to follow the next waypoint
+			if (Vector3.Distance (transform.position, _path.vectorPath[pontoAtual]) < tolerancia) {
+				pontoAtual++;
+				return;
 			}
 		}
-
-		if (_path == null) {
-			//We have no path to move after yet
-			print ("espera");
-			return;
-		}
-		
-		if (pontoAtual >= _path.vectorPath.Count) {
-			Debug.Log ("Fim do caminho");
-			return;
-		}
-		
-		//Direction to the next waypoint
-		Vector3 dir = (_path.vectorPath[pontoAtual]-transform.position).normalized;
-		_motor.direcao = dir;
-		
-		//Check if we are close enough to the next waypoint
-		//If we are, proceed to follow the next waypoint
-		if (Vector3.Distance (transform.position, _path.vectorPath[pontoAtual]) < tolerancia) {
-			pontoAtual++;
-			return;
-		}
-
 
 	}
 }

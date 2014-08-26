@@ -5,6 +5,7 @@ public class Eventos
 {
 	public static int VitoriaFase = 0;
 	public static int DerrotaFase = 1;
-	public static int Cruzou = 2;
+	public static int CruzouLinha = 2;
+	public static int AbriuPortao = 3;
 }
 
